@@ -19,12 +19,16 @@ import {connect} from 'react-redux';
    this.props.dispatch({type:'decrease'});
  }
 
+
  render()
  {
      return(
-         <View style={{marginTop:300,marginLeft:50}}>
+         <View style={{marginTop:300}}>
+       
+
              <Button title='Increase' onPress={()=>{this.increase()}} />
-             <Text>{this.props.count}</Text> 
+             <Text style={{padding:20,marginLeft:150}}>{this.props.s.count}</Text> 
+              <Text style={{padding:20,marginLeft:150}}>{this.props.s.name}</Text> 
              <Button title='Decrease' onPress={()=>{this.decrease()}} /> 
                   
          </View>
@@ -35,7 +39,7 @@ import {connect} from 'react-redux';
 
 const mapStatetoProps = state =>
 {
-   return {count:state.count};
+   return {s:state};
 };
     
 
